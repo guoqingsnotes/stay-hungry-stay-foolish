@@ -1,5 +1,9 @@
+Generates a <machineKey> element that can be copied + pasted into a Web.config file.
+
+Run PowerShell as administrator then run #1(define function) and #2(use the function) commands. 
+
+1.Defining function
 ```
-# Generates a <machineKey> element that can be copied + pasted into a Web.config file.
 function Generate-MachineKey {
   [CmdletBinding()]
   param (
@@ -43,6 +47,12 @@ function Generate-MachineKey {
       $validationAlgorithm.ToUpperInvariant(), $validationKey)
   }
 }
-Generate-MachineKey
-<machineKey decryption="AES" decryptionKey="..." validation="HMACSHA256" validationKey="..." />
 ```
+
+2.Execute the function, then you will get an output like <machineKey decryption="AES" decryptionKey="..." validation="HMACSHA256" validationKey="..." />
+```
+Generate-MachineKey
+```
+
+Example : 
+![image](https://user-images.githubusercontent.com/85205970/187805540-e59d8ead-ade3-4912-acae-7d8a2fc42521.png)
